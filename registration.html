@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="reg.css">
+    <title>Rekisteröitymislomake</title>
+</head>
+<body>
+    
+    <h1>Rekisteröitymislomake</h1>
+    <h3>Siirry kentästä toiseen tab-näppäimellä.</h3>
+    <p>Tähdellä (*) merkityt ovat pakollisia tietoja.</p>
+
+    <div id="error-messages"></div>
+
+    <form name='registration' onSubmit="return formValidation();">
+        <ul>
+        <li><label for="userid">*Käyttäjä ID:</label></li>
+        <li><input type="text" id="userid" name="userid" size="12" onfocus="this.value=''" required></li>
+        
+        <li><label for="passid">*Salasana:</label></li>
+        <li><input type="password" id="passid" name="passid" size="12" onfocus="this.value=''" required></li>
+        
+        <li><label for="username">*Nimi:</label></li>
+        <li><input type="text" id="username" name="username" size="40" onfocus="this.value=''" required></li>
+        
+        <li><label for="address">*Osoite:</label></li>
+        <li><input type="text" id="address" name="address" size="40" onfocus="this.value=''" required></li>
+        
+        <li><label for="country">*Valitse maa:</label></li>
+        <li>
+        <select name="country" id="country" required>
+            <option value="">(Valitse maa)</option>
+            <option value="suomi">Suomi</option>
+            <option value="sverige">Sverige</option>
+        </select>
+        </li>
+        
+        <li><label for="zip">*Postinumero:</label></li>
+        <li><input type="text" id="zip" name="zip" onfocus="this.value=''" required></li>
+        
+        <li><label for="email">*Sähköposti:</label></li>
+        <li><input type="text" id="email" name="email" size="40" onfocus="this.value=''" required></li>
+            
+        <li><label for="male">*Sukupuoli:</label></li>
+        <li><input type="radio" name="gender" id="male" value="mies" onclick="onlyOne(this)"><span>Mies</span></li>
+        <li><input type="radio" name="gender" id="female" value="nainen" onclick="onlyOne(this)"><span>Nainen</span></li>
+
+        <li><label>*Kieli:</label></li>
+        <li><input type="checkbox" name="check" value="fi" onclick="onlyOne(this)"><span>Suomi</span></li>
+        <li><input type="checkbox" name="check" value="nofi" onclick="onlyOne(this)"><span>Muu kuin suomi</span></li>
+        
+                   
+        <li><label for="desc">Lisätietoja:</label></li>
+        <li><textarea name="desc" id="desc" placeholder="Halutessasi voit kirjoittaa tähän lisätietoja."></textarea></li>
+        
+        <li><input type="submit" name="submit" value="Lähetä"></li>
+        </ul>
+        
+        <p>
+        </form>
+        
+        
+    <script src="reg.js"></script>
+</body>
+</html>
+    
